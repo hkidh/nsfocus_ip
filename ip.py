@@ -6,7 +6,7 @@ with open('tp.txt', 'r') as f:  # 開啟檔案,讀進檔案 tp.txt
         data.append(line.strip()) # 把每行去除換行符號,一行行加入data清單中
 print('Policy 共有' + str(len(data)) + '行資料' + '\n') # 計算data有多少行的資料,將 int 改為 str
 print('-' * 90)
-print('Policy 名稱如下: ')
+#print('Policy 名稱如下: ')
 
 # write_file
 with open('tp_t.csv', 'w') as f: # 開啟檔案,寫入檔案tp.csv 
@@ -18,19 +18,19 @@ with open('tp_t.csv', 'w') as f: # 開啟檔案,寫入檔案tp.csv
                     f.write(line + '\n') # 寫進f檔
 
 # sort_and_policy_name_list
-csv = []
-one = []
-with open('tp_t.csv', 'r') as f:
-    for line in f:
-        csv.append(line.split(' '))
-#    print('csv: ', csv[0])
-    for line in csv:
-        one.append(line[2])
-#    print('-' * 100)
-#    print('one:', one[0])
-    x = sorted(set(one)) #去除重複值+排序
-    for line in x:
-        print(line)
+# csv = []
+# one = []
+# with open('tp_t.csv', 'r') as f:
+#     for line in f:
+#         csv.append(line.split(' '))
+# #    print('csv: ', csv[0])
+#     for line in csv:
+#         one.append(line[2])
+# #    print('-' * 100)
+# #    print('one:', one[0])
+#     x = sorted(set(one)) #去除重複值+排序
+#     for line in x:
+#         print(line)
 
 
 # filter_Policy_and_list
@@ -39,6 +39,7 @@ while True:
     with open('tp_t.csv', 'r') as f:
         print('-' * 90)
         print('--輸入  ''q''  退出--')
+        print('')
         gn = input('請輸入 IP: ')
         if gn == 'q':
             break
@@ -47,4 +48,7 @@ while True:
         for line in f:
             if gn in line:
                 x = line.split(' ')
-                print(x[2])
+                print('')
+  #              print(gn)
+                print('所在的 group_name 為 :', x[2])
+  #             print('')
